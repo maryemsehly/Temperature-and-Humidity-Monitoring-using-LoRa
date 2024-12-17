@@ -1,15 +1,12 @@
-/**
- * Receiver code for Heltec ESP32 LoRa V3 Module.
- * Receives temperature and humidity data via LoRa, hosts a web server, and sends data to ThingSpeak.
- */
 
-#define HELTEC_POWER_BUTTON   // Must be before "#include <heltec_unofficial.h>"
+
+#define HELTEC_POWER_BUTTON  
 #include <heltec_unofficial.h>
 #include <WiFi.h>
 #include <WebServer.h>
 
 // LoRa parameters
-#define FREQUENCY           866.3       // Must match transmitter
+#define FREQUENCY           866.3      
 #define BANDWIDTH           125.0
 #define SPREADING_FACTOR    7
 
@@ -17,11 +14,11 @@ String rxdata;
 volatile bool rxFlag = false;
 
 // Wi-Fi credentials
-const char* ssid = "StarLink";          // Replace with your Wi-Fi SSID
-const char* password = "00001111";      // Replace with your Wi-Fi password
+const char* ssid = "StarLink";          
+const char* password = "00001111";     
 
 // ThingSpeak API configuration
-String apiKey = "DQEH8GZ8UAV15SR1";     // Your ThingSpeak Write API Key
+String apiKey = "DQEH8GZ8UAV15SR1";    
 const char* server = "api.thingspeak.com";
 
 // Create a web server on port 8080
