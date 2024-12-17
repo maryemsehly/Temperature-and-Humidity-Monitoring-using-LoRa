@@ -1,23 +1,19 @@
-/**
- * Transmitter code for Heltec ESP32 LoRa V3 Module.
- * Sends temperature and humidity data from a DHT11 sensor.
- */
 
-#define HELTEC_POWER_BUTTON   // Must be before "#include <heltec_unofficial.h>"
+#define HELTEC_POWER_BUTTON   
 #include <heltec_unofficial.h>
 #include <DHTesp.h>
 
 // DHT11 sensor configuration
-#define DHTPIN 42        // GPIO pin connected to DHT11
-#define DHTTYPE DHT11    // DHT 11
+#define DHTPIN 42        
+#define DHTTYPE DHT11   
 DHTesp dht;
 
 // LoRa parameters
-#define PAUSE               5   // Pause between transmissions in seconds
-#define FREQUENCY           866.3       // Frequency in MHz (Europe)
-#define BANDWIDTH           125.0       // LoRa bandwidth in kHz
-#define SPREADING_FACTOR    7           // Spreading factor
-#define TRANSMIT_POWER      14          // Transmit power in dBm
+#define PAUSE               5  
+#define FREQUENCY           866.3       
+#define BANDWIDTH           125.0       
+#define SPREADING_FACTOR    7           
+#define TRANSMIT_POWER      14          
 
 long counter = 0;
 uint64_t last_tx = 0;
